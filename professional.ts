@@ -1,4 +1,4 @@
-class Professional
+export class Professional
 {
     public name: string;
     public age: number;
@@ -12,6 +12,25 @@ class Professional
     public nationality: string;
     public oscarNumbers: number;
     public profession: string;
+
+    constructor(name:string, age:number, genre:string, weigth:number,
+                height: number, hairColor: string, eyeColor: string, 
+                race:string, isRetired:boolean, nationality:string, 
+                oscarNumbers:number, profession:string )
+{
+    this.name=name;
+    this.age=age;
+    this.genre=genre;
+    this.weight=weigth;
+    this.height=height;
+    this.hairColor=hairColor;
+    this.eyeColor=eyeColor;
+    this.race=race;
+    this.isRetired=isRetired;
+    this.nationality=nationality;
+    this.oscarNumbers=oscarNumbers;
+    this.profession=profession;
+}
 
     public getName(): string {
         return this.name;
@@ -109,25 +128,22 @@ class Professional
         this.profession = profession;
     }
 
-    
-    constructor(name:string, age:number, genre:string, weigth:number,
-                height: number, hairColor: string, eyeColor: string, 
-                race:string, isRetired:boolean, nationality:string, 
-                oscarNumbers:number, profession:string )
-        {
-            this.name=name;
-            this.age=age;
-            this.genre=genre;
-            this.weight=weigth;
-            this.height=height;
-            this.hairColor=hairColor;
-            this.eyeColor=eyeColor;
-            this.race=race;
-            this.isRetired=isRetired;
-            this.nationality=nationality;
-            this.oscarNumbers=oscarNumbers;
-            this.profession=profession;
-        }
+    public printAllProfessional():string
+    {
+        let professionalCharacteristics: string = ( " Name" + ": " + this.name  +"\n" +
+                                                    " Age" + ": " + this.age  +"\n" + 
+                                                    " Genre" + ": " + this.genre  +"\n" +
+                                                    " Weigth" + ": " + this.weight  +"\n" +
+                                                    " Heigth" + ": " + this.height  +"\n" +
+                                                    " Hair Color" + ": " + this.hairColor  +"\n" +
+                                                    " Eye Color" + ": " + this.eyeColor  +"\n" +
+                                                    " Race" + ": " + this.race  +"\n" +
+                                                    " Is Retired?" + ": " + this.isRetired  +"\n" +
+                                                    " Nationality" + ": " + this.nationality  +"\n" +
+                                                    " Oscars Numbers" + ": " + this.oscarNumbers  +"\n" +
+                                                    " Profession" + ": " + this.profession  +"\n")
+        return professionalCharacteristics
+    }
 
-        
 }
+
