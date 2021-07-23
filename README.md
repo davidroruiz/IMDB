@@ -1,2 +1,2 @@
 # IMDB
-Proyecto Final que consta en una BBDD de Peliculas 
+Proyecto Final que consta de crear un estilo de BBDD de Peliculas 

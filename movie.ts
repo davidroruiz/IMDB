@@ -125,6 +125,7 @@ export class Movie {
         this.genre = genre;
     }
 
+    
     public printMovies() {
 
         let printMovies = {

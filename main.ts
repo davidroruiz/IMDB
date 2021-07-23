@@ -25,12 +25,17 @@ movie1.setProducer("Bruce Hendricks");
 movie1.setDistributor("Walt Disney Studios Motion Pictures");
 movie1.setDirector(professionalThree);
 
+console.log("Print Movies");
 
+console.log(movie1.printMovies())
+console.log("Películas All Impresas");
 
-// console.log(movie1.printMovies())
-console.log("Películas Impresas");
+ imdbOne.imprimirAllMovies()
 
- imdbOne.imprimirMovies()
+ console.log("JSON");
+ console.log(imdbOne.creacionJSONTheObjectIMDB());
+ imdbOne.writerObjectJSON();
+ 
  
 
 
