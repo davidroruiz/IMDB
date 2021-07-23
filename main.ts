@@ -36,6 +36,10 @@ console.log("Películas All Impresas");
  console.log(imdbOne.creacionJSONTheObjectIMDB());
  imdbOne.writerObjectJSON();
  
+ console.log("READER");
+ 
+ console.log(imdbOne.readerObjectJSON());
+ 
  
 
 

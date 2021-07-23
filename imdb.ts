@@ -34,4 +34,34 @@ export class Imdb {
         fs.writeFileSync(filePath, this.creacionJSONTheObjectIMDB());
     }
 
+    public readerObjectJSON() {
+        const fs = require('fs');
+        const filePath = 'imdbBBDD.json';
+
+      const reader = fs.readFileSync(filePath,'UTF-8');
+
+        JSON.parse(reader);
+      const instanciaReaderObject = new Imdb(reader);
+
+      return instanciaReaderObject;
+    }
+
+    public escribirEnFicheroJSON(nombreFichero:string) {
+        const fs = require('fs');
+        const filePath = nombreFichero + ".json";
+
+        fs.writeFileSync(filePath, this.creacionJSONTheObjectIMDB());
+    }
+
+    public obtenerInstanciaIMDB(nombreFichero:string) {
+        const fs = require('fs');
+        const filePath = nombreFichero + ".json";
+
+        const reader = fs.readFileSync(filePath,'UTF-8');
+
+        JSON.parse(reader);
+        const instanciaReaderObject = new Imdb(reader);
+
+        return instanciaReaderObject;
+    }
 }
