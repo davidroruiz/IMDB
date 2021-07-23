@@ -126,23 +126,23 @@ export class Movie {
     }
 
     public printMovies() {
-        let printMovies: string;
-        printMovies = ("Title: " + this.title + "\n"
-            + "ReleaseYear: " + this.releaseYear + "\n"
-            + "Actors: " + this.actors + "\n"
-            + "Nacionality: " + this.nacionality + "\n"
-            + "Director: " + this.director + "\n"
-            + "Writer: " + this.writer + "\n"
-            + "Language: " + this.language + "\n"
-            + "Plataform: " + this.plataform + "\n"
-            + "isMCU: " + this.isMCU + "\n"
-            + "MainCharacterName: " + this.mainCharacterName + "\n"
-            + "Producer: " + this.producer + "\n"
-            + "Distributor: " + this.distributor + "\n"
-            + "Genre: " + this.genre);
 
+        let printMovies = {
+            "Title: ": this.title,
+            "ReleaseYear: ": this.releaseYear,
+            "Actors: ": this.actors,
+            "Nacionality: ": this.nacionality,
+            "Director: ": this.director,
+            "Writer: ": this.writer,
+            "Language: ": this.language,
+            "Plataform: ": this.plataform,
+            "isMCU: ": this.isMCU,
+            "MainCharacterName: ": this.mainCharacterName,
+            "Producer: ": this.producer,
+            "Distributor: ": this.distributor,
+            "Genre: ": this.genre
+        };
         return printMovies
     }
-
 
 }
