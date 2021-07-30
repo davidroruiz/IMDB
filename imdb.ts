@@ -57,11 +57,10 @@ export class Imdb {
         const fs = require('fs');
         const filePath = nombreFichero + ".json";
 
-        const reader = fs.readFileSync(filePath,'UTF-8');
+        let reader =  JSON.parse(fs.readFileSync(filePath,'UTF-8'));
+        
+        //const instanciaReaderObject = new Imdb(reader);
 
-        JSON.parse(reader);
-        const instanciaReaderObject = new Imdb(reader);
-
-        return instanciaReaderObject;
+        return reader;
     }
 }

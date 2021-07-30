@@ -1,24 +1,30 @@
-import { Movie } from "./movie";
-import { Professional } from './professional';
+import { Movie } from './movie';
 import { Imdb } from './imdb';
 
+let movie1: Movie = new Movie("Pirates The Caribbean", 2020, "Britanica", "Ciencia Ficcion");
 
-let movie3: Movie = new Movie("Pirates The Caribbean", 2020, "Britanica", "Ciencia Ficcion");
-let professionalFour: Professional= new Professional("David", 30,"masculino",50, 1.40,"brown","black","Caucassian", false, "Nigeriano", 5, "Actor");
-let professionalFive: Professional= new Professional("Amanda", 50,"femenino",70, 1.80,"brown","black","Caucassian", true, "Spanish", 0, "Actor");
-let professionalSix: Professional = new Professional("Javier Bardem", 52, "male", 80, 1.81, "black", "brown", "Caucasian", false, "Spanish", 1, "Actor")
-let imdb: Imdb = new Imdb([movie3]);
+let imdb: Imdb = new Imdb([movie1]);
 
-movie3.setActors([professionalFour]);
-movie3.setWriter(professionalFive);
-movie3.setLanguage("English");
-movie3.setPlataform("3D");
-movie3.setIsMCU(true);
-movie3.setMainCharacterName("Enrique");
-movie3.setProducer("Marco Polo");
-movie3.setDistributor("Walt Disney ");
-movie3.setDirector(professionalSix);
+var readLineSync = require('readline-sync');
+let title: string = readLineSync.question('titulo ');
+let year: number = readLineSync.question('ayoNacimiento ');
+let nacionality: string = readLineSync.question('nacionalidad ');
+let genre: string = readLineSync.question('genero ');
+let movieReadLine: Movie = new Movie(title, year, nacionality, genre);
 
-imdb.escribirEnFicheroJSON("imdbBBDD");
+let readJsonFile: Imdb = imdb.obtenerInstanciaIMDB('imdbBBDD');
 
-console.log(imdb.obtenerInstanciaIMDB("imdbBBDD"));
+let arrayMovies: Movie[] = [];
+for (const keyPelis in readJsonFile.arrayMovie) {
+
+    let arrayTheAtributos:any[] = [];
+    for (const key in readJsonFile.arrayMovie[keyPelis]) {
+        arrayTheAtributos.push(readJsonFile.arrayMovie[keyPelis][key]);
+        
+    };
+    arrayMovies.push(new Movie(arrayTheAtributos[0], arrayTheAtributos[1], arrayTheAtributos[2], arrayTheAtributos[3]));
+};
+arrayMovies.push(movieReadLine);
+
+let raedSIMDBS = new Imdb(arrayMovies);
+raedSIMDBS.escribirEnFicheroJSON("imdbBBDD");
